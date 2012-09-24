@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript" src="jquery_draggable_1.1.js"></script>
+<script src="../resizable/jquery_resizable_1.2.js"></script>
+<script src="../rotatable/jquery_rotatable_1.0.js"></script>
+
+<style type="text/css">
+#test{
+	background:#06F;
+	height:300px;
+	width:300px;
+	top:50px;
+	left:50px;
+}
+#console{
+	position:absolute;
+	top:500px;
+}
+</style>
+<title>demo</title>
+</head>
+
+<body>
+
+<div id="test"></div>
+<div id="console"></div>
+<input type="button" id="btn" value="test">
+<script>
+$(function(){
+	$('#test').draggable().resizable().rotatable();
+	
+	temp=$('#test');
+	$(document).bind('mousemove',function(){
+		$('#console').html(temp.offset().left+','+temp.offset().top+','+temp.width()+','+temp.height()+','+((typeof(temp.data('transform'))!="undefined")?(temp.data('transform')):0));		
+	});
+	$('#btn').click(function(){
+		temp.slideUp(1000).slideDown(1000);
+	});
+})(jQuery);
+</script>
+</body>
+</html>

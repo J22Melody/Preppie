@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+/*.container{
+	width:1300px;
+	height:700px;
+}
+*/
+.step{
+	background-color:#0CF;
+	border:#000 groove 3px;
+	font-size:150px;
+	width:800px;
+	height:600px;
+}
+</style>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript" src="js/jquery_preppie_2.0.js"></script>
+<script>
+$(function() {
+    var preppie = new Preppie({
+		stepSelector:'.step',
+		parentSelector:'.container'
+	});
+	preppie.init();
+});
+</script>
+</head>
+
+<body>
+<div class="container">
+  <section class="step">
+    <p>Step One</p>
+  </section>
+  <section class="step" data-translate-x="1000">
+    <p>Step Two</p>
+  </section>
+  <section class="step" data-translate-x="2000">
+    <p>Step Three</p>
+  </section>
+  <section class="step" data-translate-x="-1000" data-translate-y="1000">
+    <p>Step Four</p>
+  </section>
+  <section class="step" data-scale="0.5" data-translate-y="2000">
+    <p>Step Five</p>
+  </section>
+  <section class="step" data-skew-x="45" data-rotate-y="360">
+    <p>Step Six</p>
+  </section>
+  <section class="step" data-rotate-z="360" data-translate-x="-3000" data-skew-y="100">
+    <p>Step Seven</p>
+  </section>
+  <section class="step" data-rotate-x="180" data-translate-z="2000">
+    <p>Step Eight</p>
+  </section>
+  <section class="step" data-rotate-z="360" data-rotate-y="540" data-translate-y="-2000">
+    <p>Step Nine</p>
+  </section>
+  <section class="step" data-translate-x="2000" data-rotate-x="200" data-scale-y="2">
+    <p>Step Ten</p>
+  </section>
+</div>
+</body>
+</html>
